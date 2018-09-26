@@ -1,0 +1,276 @@
+/*
+	color scheme: #5580e9, #84ceeb, #5ab8eb, #c1c8e4, #885fd0;
+
+	or : #F2F9DB #B5D737 #68B332 #357E9B #092935
+
+
+*/
+body{
+	font-family: 'Fira Sans', sans-serif;
+	color: #464646;
+	margin: 0 auto;
+	background-color: #F2F9DB;
+	overflow-x: hidden;
+
+}
+
+main{
+		background-image: url(images/cover5n.jpg);
+		/* background-size: cover; */
+		/* position: relative; */
+		background-attachment: fixed;
+		/* background-position-y: 130px; */
+		padding-top: 3em;
+}
+
+
+h1,h2,h3,h4{
+	margin: 0;
+
+}
+
+header{
+	display: block;
+	/* flex-direction: column; */
+	/* margin-bottom: 3em; */
+}
+
+header li{
+	display: inline-block;
+}
+
+
+#cornellEmblem{
+	width: auto;
+	height: 2.3em;
+}
+
+
+#logo{
+	padding-left: 0.5em;
+	padding: 1em;
+	/* display: inline-block; */
+	width: fit-content;
+	/* max-width: 900px; */
+	/* margin: auto; */
+	background: #F2F9DB;
+	color: #357E9B;
+	margin: 0;
+	float: left;
+}
+
+#search{
+	float: right;
+	width: fit-content;
+	/* position: relative; */
+	/* top: -50px; */
+	/* margin-right: 20px; */
+	margin: 30px;
+	display: inline-flex;
+}
+
+#search input{
+	height: 30px;
+	width: 250px;
+	padding: 5px 10px;
+	font-size: 1em;
+	font-family: inherit;
+	margin: 0;
+	border: 0;
+	margin-right: 5px;
+}
+
+#search button{
+	background-image: url('images/search.png');
+	height: 40px;
+	width: 40px;
+	background-size: initial;
+	background-repeat: no-repeat;
+	border: 0;
+	background-color: #357E9B;
+	background-position-y: center;
+	background-position-x: center;
+	padding: 10px;
+	cursor: pointer;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #68B332;
+    /* margin: 0.5em 0 0 0; */
+    /* margin: 0.5em auto; */
+    /* border-top: 1px solid #2ECC40; */
+    /* border-bottom: 1px solid #2ECC40; */
+}
+
+.nav--link{
+	padding: 1em;
+	cursor: pointer;
+	font-weight: bolder;
+	color: #092935;
+	background: inherit;
+}
+
+.nav--link:hover{
+	color: #f7f7f7;
+	/* background: #B5D737; */
+	/* border: 1px solid #357E9B; */
+}
+
+.dropdown{
+	display: none;
+	position: absolute;
+	background-color: inherit;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	z-index: 100;
+	color: #092935;
+}
+
+.dropdown:hover{
+	display:none ;
+	position: absolute;
+}
+.nav--link#home{
+	position: relative;
+}
+
+.nav--link#home:hover .dropdown{
+	display:block;
+}
+
+
+.dropdown a{
+    float: none;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.dropdown a:hover{
+    color: #F2F9DB;
+}
+
+.background{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+}
+
+#about .background{
+/*    background-image: url(images/cover5.jpg);
+*/    background-size: cover;
+    z-index: -1;
+    background-position-y: -40px;
+    opacity: 0.9;
+}
+
+#about{
+	color: #F2F9DB;
+	background: #607d8b8c;
+}
+
+#about .imgWrapper{
+    width: 200px;
+    height: 250px;
+    float: right;
+    display: block;
+    margin: 0 0 1em 1em;
+    object-fit: contain;
+}
+
+#about img{
+	width: auto;
+	height: 100%;
+}
+
+
+#about .content{
+	margin: 1em;
+	padding: 1em;
+	overflow: auto;
+	/* background: #12239a59; */
+}
+
+#gallery{
+	background-color: #f7f7f7;
+}
+
+#slideshow img{
+	width: 90%;
+	height: auto;
+	display: block;
+	margin: 1em auto;
+
+}
+
+
+
+section{
+	padding: 0.5em 1em;
+	/* max-width: 900px; */
+	margin: auto;
+	text-align: justify;
+	object-fit: contain;
+	/* border-radius: 0.5%; */
+	position: relative;
+	margin-bottom: 50px;
+	/* padding-top: 3em; */
+}
+
+#news{
+	background: #F2F9DB;
+	color: #092935;
+}
+
+#news .background{
+/*    background-image: url(images/cover3.jpg);
+*/    background-size: cover;
+    z-index: -1;
+    background-position-y: -100px;
+    opacity: 0.9;
+}
+
+#news li{
+	list-style: none;
+}
+
+#news .date{
+	background: transparent;
+}
+
+
+
+
+#news .content{
+	margin: 1em;
+	padding: 1em;
+	height: 300px;
+	overflow: auto;
+	background: #F2F9DBfff96;
+}
+
+#tweets{
+	background-color: #F2F9DB;
+}
+
+
+footer{
+	text-align: center;
+	background-color: #092935;
+	padding: 1em 0;
+	color: #F2F9DB;
+	/* border-top: 1px solid #2ECC40; */
+}
+
+address a{
+	color: inherit;
+}
