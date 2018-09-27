@@ -15,7 +15,7 @@ body{
 
 main{
 		background-image: url(images/cover5n.jpg);
-		/* background-size: cover; */
+		background-size: cover;
 		/* position: relative; */
 		background-attachment: fixed;
 		/* background-position-y: 130px; */
@@ -217,7 +217,7 @@ nav{
 
 
 section{
-	padding: 0.5em 1em;
+	padding: 1em 5em;
 	/* max-width: 900px; */
 	margin: auto;
 	text-align: justify;
@@ -226,7 +226,7 @@ section{
 	position: relative;
 	margin-bottom: 50px;
 	/* padding-top: 3em; */
-		color: #F2F9DB;
+	color: #F2F9DB;
 	background: #607d8b8c;
 }
 
