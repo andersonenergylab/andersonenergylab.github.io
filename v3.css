@@ -39,7 +39,7 @@ header{
 	/* flex-direction: column; */
 	/* margin-bottom: 3em; */
 	background: #ffffff;
-	border-bottom: 1px solid #e0e0e0;
+	border-bottom: 1px solid #f3f3f3;
 }
 
 header li{
@@ -127,7 +127,7 @@ nav{
 }
 
 .nav--link:hover{
-	color: #f7f7f7;
+	/* color: #f7f7f7; */
 	background: #68B332;
 	/* border: 1px solid #357E9B; */
 }
@@ -334,6 +334,11 @@ a{
 
 .headshot{
 	width: 200px;
+	height:  200px;
+	background-size: cover;
+	float: left;
+	margin-right: 1em;
+	border-radius: 100%;
 }
 
 .bio{
@@ -341,10 +346,12 @@ a{
 	margin-bottom: 0px;
 	padding: 1em 5em;
 	color: #092935;
-	height: 300px;
+	min-height: 210px;
+	position: static;
+	border-bottom: 1px solid #e2e2e2;
 }
 
-.bio img{float: left;margin-right: 1em;margin-bottom: 1em;/* border-radius: 100%; */}
+.bio img{float: left;margin-right: 1em;/* margin-bottom: 1em; *//* border-radius: 100%; */}
 
 .bio h3{
 	color: #004d88;
