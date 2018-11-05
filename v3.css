@@ -46,6 +46,10 @@ header li{
 	display: inline-block;
 }
 
+header a{
+	text-decoration: none;
+}
+
 
 #cornellEmblem{
 	width: auto;
@@ -189,7 +193,7 @@ nav{
 #about{
 	/* color: #092935; */
 	position: relative;
-	height: 400px;
+	min-height: 400px;
 	/* background-image: url(images/cover5.jpg); */
 	background-size: cover;
 	background: transparent;
@@ -197,8 +201,8 @@ nav{
 }
 
 .bg{
-	background-image: url(images/cover5.jpg);
-	background-position-y: -70px;
+	background-image: url(images/cover5n.jpg);
+	background-repeat: no-repeat;
 	background-size: cover;
 	filter: blur(3px);
 	position: fixed;
@@ -234,8 +238,8 @@ nav{
 
 
 #about .content{
-	margin: 6em;
-	/* margin-top: 10em; */
+	margin: 3em;
+	margin-top: 6em;
 	padding: 1em;
 	overflow: auto;
 	font-weight: bolder;
@@ -354,5 +358,10 @@ a{
 .bio img{float: left;margin-right: 1em;/* margin-bottom: 1em; *//* border-radius: 100%; */}
 
 .bio h3{
-	color: #004d88;
+	color: #00849c;
+	font-weight: normal;
+}
+.bio h4{
+	font-weight: normal;
+	color: #757575;
 }

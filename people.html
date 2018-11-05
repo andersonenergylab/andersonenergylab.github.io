@@ -9,15 +9,15 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 </head>
-<body>
+<body onload="load_people()">
 	<header>
 		<div id="top">
 
-			<div id="logo">
+			<a id="logo" href="index.html">
 				<h1>Anderson Laboratory</h1>
 				<h3 style="color:#092935">Biological & Environmental Engineering</h3>
 	<!-- 			<img id="cornellEmblem" src="images/cornell-reduced-black.svg"> -->
-			</div>
+			</a>
 			<div id="search">
 				<input type="text" name="search" placeholder="Search Anderson Lab">
 				<button></button>
@@ -41,7 +41,7 @@
 	</header>
 
 	<main>
-		<section class="bio" style="top:50px;">
+		<!--section class="bio">
 			<div class="headshot" style="background-image:url(images/people/LindsayAnderson.jpg)"></div>
 			<h3>Dr. C. Lindsay Anderson</h3>
 			<p>
@@ -108,7 +108,7 @@
 		<section class="bio">
 			<div class="headshot" style="background-image:url(images/people/LucknyZephyr.jpg)"></div>
 			<h3>Luckny Zéphyr</h3>, received his Ph.D. and MBA from Université Laval (Québec, Canada). He received a B.S. from Centre de Techniques de Planification et d’Économie Appliquée (CTPEA) (Port-au-Prince, Haiti) in Applied Economics/Statistics. His research interests encompass stochastic optimization of hydropower, applied Probability and Statistics, and convex analysis. His current research is on unit commitment, particularly using numerical approximation schemes to handle uncertainty.
-		</section>
+		</section-->
 
 		
 	</main>
@@ -130,6 +130,47 @@
 
 
 
+<script>
+	//load and parse people.json
+	function load_people() {
+		let request = new XMLHttpRequest();
+		request.onreadystatechange = function () {
+			if (request.readyState === XMLHttpRequest.DONE) {
+				let people = JSON.parse(request.responseText);
+				display_people(people);
+			}
+		}
+		request.open("GET", "people.json");
+		request.send()
+	}
+
+	//display people in page
+	function display_people(list) {
+		list.forEach(function (p) {
+			let section = document.createElement("section");
+				section.setAttribute("class", "bio");
+			let img = document.createElement("div");
+				img.setAttribute("class", "headshot");
+				img.style.backgroundImage = "url(images/people/"+p.name.replace(/ /g, "")+".jpg)"
+			let name = document.createElement("h3");
+				name.innerText = p.name + ", " + p.title;
+			let position = document.createElement("h4");
+				position.innerText = p.position;
+			let bio = document.createElement("p");
+				bio.innerHTML = p.bio;
+
+			section.appendChild(img);
+			section.appendChild(name);
+			section.appendChild(position);
+			section.appendChild(bio);
+
+			document.querySelector("main").appendChild(section);
+
+		});
+	}	
+
+</script>
 
 </body>
+
 </html>
