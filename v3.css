@@ -72,6 +72,18 @@ header a{
 	float: left;
 }
 
+#small-logo{
+	color:#357E9B;
+	font-weight: bold;
+	font-size: 1.5em;
+	position: absolute;
+	left: -300px;
+	top: 10px;
+	opacity: 1;
+	transition: 0.1s;
+	z-index: 2;
+}
+
 #search{
 	float: right;
 	width: fit-content;
@@ -114,11 +126,14 @@ nav{
     width: 100%;
     display: flex;
     justify-content: center;
-    /* background: #68B332; */
+    background: white;
     /* margin: 0.5em 0 0 0; */
     /* margin: 0.5em auto; */
     border-top: 1px solid #68B332;
     /* border-bottom: 1px solid #2ECC40; */
+    /* position: fixed; */
+    z-index: 1;
+    transition: 1s;
 }
 
 .nav--link{
@@ -182,13 +197,8 @@ nav{
 	border-radius: inherit;
 }
 
-#about .background{
-/*    background-image: url(images/cover5.jpg);
-*/    background-size: cover;
-    z-index: -1;
-    background-position-y: -40px;
-    opacity: 0.9;
-}
+#about .background{/*    background-image: url(images/cover5.jpg);
+*/background-size: cover;z-index: -1;background-position-y: -40px;opacity: 0.9;background: #357e9b78;}
 
 #about{
 	/* color: #092935; */
@@ -215,11 +225,11 @@ nav{
 }
 
 .cnt{
-	position: absolute;
+	/* position: absolute; */
 	top: 0;
 	left: 0;
-	background: #357e9b78;
-	height: 100%;
+	/* background: #357e9b78; */
+	/* height: 100%; */
 }
 
 #about .imgWrapper{
@@ -238,10 +248,10 @@ nav{
 
 
 #about .content{
-	margin: 3em;
-	margin-top: 6em;
-	padding: 1em;
-	overflow: auto;
+	margin: auto;
+	margin-top: 5%;
+	/* padding: 1em; */
+	/* overflow: auto; */
 	font-weight: bolder;
 	/* background: #12239a59; */
 }
@@ -252,7 +262,8 @@ nav{
 }
 
 #slideshow img{
-	width: 60%;
+	width: 70%;
+	min-width: 300px;
 	height: auto;
 	display: block;
 	margin: 1em auto;
@@ -294,7 +305,7 @@ section h3{
 }
 
 #news h4 {
-    color: #B5D737;
+    color: #0084bb;
 }
 
 #news li{
@@ -305,17 +316,34 @@ section h3{
 	background: transparent;
 }
 
+.news-event{
+	border-left: 2px solid #d0d0d0;
+	padding left:;
+	padding-left: 0.5em;
+	background-color: white;
+	width: 99%;
+	padding-right: 0.5em;
+}
+
+.news-event p{
+	margin-top:  0.5em;
+}
+
 
 
 
 #news .content{
 	margin-top: 1em;
+	padding-left: 0.5em;
+	padding-top: 0.5em;
 	padding-right: 0.5em;
-	height: 230px;
+	height: 300px;
 	overflow: auto;
-	width: 70%;
+	width: 100%;
 	float: left;
-	background: #F2F9DBfff96;
+	background: #f3f3ff;
+	border-left: 5px solid #68b332;
+	overflow-x: hidden;
 }
 
 #tweets{

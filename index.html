@@ -9,7 +9,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 </head>
-<body>
+<body onload="load_news()">
 	<header>
 		<div id="top">
 
@@ -24,6 +24,7 @@
 			</div>
 		</div>
 		<nav>
+			<div id="small-logo">Anderson Laboratory</div>
 			<a href="index.html" class="nav--link" id="home">
 				HOME
 
@@ -45,13 +46,12 @@
 		<section id="about">
 			
 
-			<div class="cnt">
 				
 			<br>
 			
 			<div class="background"></div>
 			<div class="content">
-			<h1 style="font-size: 2em">ENABLING SUSTAINABLE ENERGY TRANSITIONS</h1>
+			<h1 style="font-size: 2em;text-align: center;">ENABLING SUSTAINABLE ENERGY TRANSITIONS</h1>
 			<!--div class="imgWrapper">
 				<img src="http://blogs.cornell.edu/anderson1/files/2013/09/shutterstock_61736437_1024-2ggoqxh.jpg">
 			</div-->
@@ -59,7 +59,6 @@
 				The Anderson Lab investigates operational methods for more effective integration and use of renewable energy technologies. 
 				Our approach is interdisciplinary, combining engineering, economics and mathematics to better understand the interactive forces of systems and markets. <a href="">Read more</a>
 			</p>
-			</div>
 			</div>
 
 
@@ -71,49 +70,10 @@
 			<h2>News</h2>
 			<div class="background"></div>
 			<div class="content">
-						<div class="d
-						ate">
-							<h4>July 2018</h4>
-								<p>
-								<ul class="events">
-									<li class="event">Congratulations to Amandeep Gupta on the acceptance of his paper “Statistical Bus Ranking for Flexible Robust Unit Commitment” in the IEEE Transactions on Power Systems!
-									</li>
-										<li class="event">
-									The National Offshore Wind Research and Development Consortium is announced by U.S. Department of Energy and will be led by the New York State Energy Research and Development Authority (NYSERDA) and Stony Brook University, with participation of Profs. Anderson, Barthelmie, and Pryor. Read the Chronicle story here: http://news.cornell.edu/stories/2018/07/cornell-professors-contribute-winning-offshore-wind-energy-alliance
-									</li>
-										<li class="event">
-									Effective July 1, Lindsay will be taking on a leadership role with the Atkinson Center for a Sustainable Future, as the Kathy Dwyer Marble and Curt Marble Faculty Director for Energy
-									</li>
-								</ul>
-								<h4>June 2018</h4>
-								<ul class="events">
-									<li class="event">
-									Welcome Alumni and friends to Reunion 2018! Come and see all the ways that Cornell is helping the world transition to a Sustainable Energy Future. Event info:
-									Talk: “Sustainable Energy: Innovation to Impact” on Friday June 8, 1-230pm in the Alice Statler Auditorium (Lindsay will be one of the panelists!)
-									</li>
-								</ul>
-								<h4>May 2018</h4>
-								<ul class="events">
-									<li class="event">
-									Congratulations to Dr. Ge (Claire) Gao on the arrival of her baby son Salomon!
-								</li>
-								
-								</ul>
-								<h4>April 2018</h4>
-								<ul class="events">
-									<li class="event">
-									Dr. Ge (Claire) Gao has joined the Anderson Lab as a Postdoctoral Associate. Claire received her Ph.D. in Industrial Engineering at Iowa State University this year. Welcome Claire!
-									</li>
-									<li class="event">
-									Dr. Luckny Zéphyr will start his first faculty position at Laurentian University (Canada) on July 1, 2018. Congrats Luckny! We will miss you!
-									</li>
-								</ul>
-							</p>
+				
 
-
-						</div>
 			</div>
-			<img style="float: right;width: 20%" src="https://cpb-us-e1.wpmucdn.com/blogs.cornell.edu/dist/3/3658/files/2013/09/shutterstock_71494024-1ojzbzb-257x300.jpg">
+			<!--img style="float: right;width: 20%" src="https://cpb-us-e1.wpmucdn.com/blogs.cornell.edu/dist/3/3658/files/2013/09/shutterstock_71494024-1ojzbzb-257x300.jpg"-->
 
 		</section>
 
@@ -152,4 +112,63 @@
 
 
 </body>
+
+<script>
+	//load and parse news.json
+	function load_news() {
+		let request = new XMLHttpRequest();
+		request.onreadystatechange = function () {
+			if (request.readyState === XMLHttpRequest.DONE) {
+				let news = JSON.parse(request.responseText);
+				console.log(news);
+				display_news(news);
+			}
+		}
+		request.open("GET", "news.json");
+		request.send();
+	}
+
+	//display news in page
+	function display_news(list) {
+		list.forEach(function (d) {
+			let div = document.createElement("div");
+				div.setAttribute("class", "news-event");
+			let date = document.createElement("h4");
+				date.innerText = d.date;
+
+			div.appendChild(date);
+
+			d.events.forEach(function (event) {
+				let p = document.createElement("p");
+					p.innerHTML = event
+				div.appendChild(p);
+			})
+
+			document.querySelector("#news .content").appendChild(div);
+		});
+	}		
+
+
+	//fix header on scroll
+	window.onscroll = function () {
+		let nav = document.querySelector("nav"),
+			main = document.querySelector("main"),
+			logo = document.querySelector("#small-logo");
+
+		if (window.pageYOffset > 104) {
+			main.style.paddingTop = "154px";
+			nav.style.position = "fixed";
+			nav.style.justifyContent = "flex-end";
+			logo.style.left = "5px";
+
+		}
+		else{
+			nav.style.position = "initial"
+			main.style.paddingTop = "0";
+			nav.style.justifyContent = "center";
+			logo.style.left = "-300px";
+		}
+	}
+</script>
+
 </html>

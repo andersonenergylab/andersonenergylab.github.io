@@ -24,6 +24,7 @@
 			</div>
 		</div>
 		<nav>
+			<div id="small-logo">Anderson Laboratory</div>
 			<a href="index.html" class="nav--link" id="home">
 				HOME
 
@@ -141,7 +142,7 @@
 			}
 		}
 		request.open("GET", "people.json");
-		request.send()
+		request.send();
 	}
 
 	//display people in page
@@ -167,6 +168,27 @@
 			document.querySelector("main").appendChild(section);
 
 		});
+	}
+
+	//fix header on scroll
+	window.onscroll = function () {
+		let nav = document.querySelector("nav"),
+			main = document.querySelector("main"),
+			logo = document.querySelector("#small-logo");
+
+		if (window.pageYOffset > 104) {
+			main.style.paddingTop = "154px";
+			nav.style.position = "fixed";
+			nav.style.justifyContent = "flex-end";
+			logo.style.left = "5px";
+
+		}
+		else{
+			nav.style.position = "initial"
+			main.style.paddingTop = "0";
+			nav.style.justifyContent = "center";
+			logo.style.left = "-300px";
+		}
 	}	
 
 </script>
