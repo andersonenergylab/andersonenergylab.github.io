@@ -8,11 +8,12 @@
 body{
 	/*font-family: 'Fira Sans', sans-serif;/*/
 	font-family: 'Yantramanav', sans-serif;
-
+	min-width: 765px;
 	color: #464646;
 	margin: 0 auto;
 	/* background-color: #F2F9DB; */
 	overflow-x: hidden;
+	/* min-height: 100%; */
 }
 
 main{
@@ -31,7 +32,6 @@ main{
 
 h1,h2,h3,h4{
 	margin: 0;
-
 }
 
 header{
@@ -133,7 +133,6 @@ nav{
     /* border-bottom: 1px solid #2ECC40; */
     /* position: fixed; */
     z-index: 1;
-    transition: 1s;
 }
 
 .nav--link{
@@ -392,4 +391,38 @@ a{
 .bio h4{
 	font-weight: normal;
 	color: #757575;
+}
+
+.alumni{
+	/* float: left; */
+	padding: 1em;
+	height: 200px;
+	text-align: center;
+}
+
+.alumni h3{
+	color: #00849c;
+	font-weight: normal;
+}
+
+
+.paper{
+	/* margin-top: 30px; */
+	margin-bottom: 0px;
+	padding: 1em 5em;
+	color: #092935;
+	/* min-height: 210px; */
+	position: static;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+.paper h4{
+	color: #0c525f;
+	font-weight: normal;
+	margin:  0;
+}
+.paper h5{
+	font-weight: normal;
+	color: #757575;
+	margin: 0;
 }

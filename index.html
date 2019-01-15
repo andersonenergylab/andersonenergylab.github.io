@@ -37,7 +37,7 @@
 			</div>
 			<a href="people.html" class="nav--link">PEOPLE</a>
 			<a class="nav--link">RESEARCH</a>
-			<a class="nav--link">PAPERS</a>
+			<a href="papers.html" class="nav--link">PAPERS</a>
 		</nav>
 	</header>
 
@@ -130,21 +130,31 @@
 
 	//display news in page
 	function display_news(list) {
+		list.sort(function (a,b) {
+			return (new Date(b.date)) - (new Date(a.date));
+		});
+
+		let current = null,
+			current_container = null;
+
 		list.forEach(function (d) {
-			let div = document.createElement("div");
+
+			if (d.date != current) {
+				//add a new date
+				current = d.date;
+				let div = current_container = document.createElement("div");
 				div.setAttribute("class", "news-event");
-			let date = document.createElement("h4");
+				let date = document.createElement("h4");
 				date.innerText = d.date;
+				div.appendChild(date);
+				document.querySelector("#news .content").appendChild(current_container);
+			}
 
-			div.appendChild(date);
+			let p = document.createElement("p");
+				p.innerHTML += d.event + "<br>"
+			current_container.appendChild(p);
 
-			d.events.forEach(function (event) {
-				let p = document.createElement("p");
-					p.innerHTML = event
-				div.appendChild(p);
-			})
-
-			document.querySelector("#news .content").appendChild(div);
+			
 		});
 	}		
 
@@ -152,21 +162,28 @@
 	//fix header on scroll
 	window.onscroll = function () {
 		let nav = document.querySelector("nav"),
+			header = document.querySelector("header"),
 			main = document.querySelector("main"),
 			logo = document.querySelector("#small-logo");
 
 		if (window.pageYOffset > 104) {
-			main.style.paddingTop = "154px";
+			main.style.marginTop = nav.offsetHeight + 104 + "px";
 			nav.style.position = "fixed";
 			nav.style.justifyContent = "flex-end";
 			logo.style.left = "5px";
 
 		}
-		else{
+		else {
 			nav.style.position = "initial"
-			main.style.paddingTop = "0";
+			main.style.marginTop = "0";
 			nav.style.justifyContent = "center";
 			logo.style.left = "-300px";
+		}
+	}
+
+	window.onresize = function () {
+		if (window.innerWidth < 761) {
+			
 		}
 	}
 </script>

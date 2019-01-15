@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anderson Lab</title>
+
+	<link rel="stylesheet" type="text/css" href="v3.css">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<script type="text/javascript" src="fuse.min.js"></script>
+
+</head>
+<body onload="">
+	<header>
+		<div id="top">
+
+			<a id="logo" href="index.html">
+				<h1>Anderson Laboratory</h1>
+				<h3 style="color:#092935">Biological & Environmental Engineering</h3>
+			<!-- <img id="cornellEmblem" src="images/cornell-reduced-black.svg"> -->
+			</a>
+			<div id="search">
+				<input type="text" id="search_box" placeholder="Search Anderson Lab">
+				<button onclick="search()"></button>
+			</div>
+		</div>
+		<nav>
+			<div id="small-logo">Anderson Laboratory</div>
+			<a href="index.html" class="nav--link" id="home">
+				HOME
+
+				<div class="dropdown">
+					<a href="#about">About</a>
+					<a href="#news">News</a>
+					<a href="#gallery">Gallery</a>
+					<a href="#tweets">Tweets</a>
+				</div>
+			</div>
+			<a href="people.html" class="nav--link">PEOPLE</a>
+			<a class="nav--link">RESEARCH</a>
+			<a href="papers.html" class="nav--link">PAPERS</a>
+		</nav>
+	</header>
+
+	<main>
+
+<!-- 		<h2 style="padding: 1em 4em;color:#68b332;">Papers</h2>
+ -->
+ 		<section class="results">
+			
+
+		</section>
+		
+	</main>
+
+
+	<footer>
+		<address>
+			C. Lindsay Anderson &#183; 316 Riley Robb Hall &#183; <a href="mailto:cla28@cornell.edu">cla28@cornell.edu</a>
+		</address>
+
+		<a href="https://twitter.com/lndsyandrsn" style="text-decoration: none;" target="_blank">
+			<img src="images/twitter.svg" style="width: 20px; height: 30px">
+		</a>
+
+		<br>
+
+		&copy;2018 Anderson Lab
+	</footer>
+
+<script>	
+	function search() {
+		start_loading_animation();
+
+		let query = document.querySelector("#search_box").value;
+
+		load_json("people.json", function (list) {
+			window.people_results = fuse(["name"], query, list);
+			console.log(people_results)
+
+		});
+
+		load_json("papers.json", function (list) {
+			window.papers_results = fuse(["authors", "title", "publisher", "keywords"], query, list);
+			console.log(papers_results)
+
+		});
+
+		load_json("news.json", function (list) {
+			window.news_results = fuse(["event"], query, list);
+			console.log(news_results)
+		});
+
+		//stop_loading_animation();
+	}
+
+
+	function load_json(file_name, callback) {
+		let request = new XMLHttpRequest();
+		request.onreadystatechange = function () {
+			if (request.readyState === XMLHttpRequest.DONE) {
+				let result = JSON.parse(request.responseText);
+				callback(result);
+			}
+		}
+		request.open("GET", file_name);
+		request.send();
+	}
+
+	function fuse(k, q, l) {
+		let options = {
+			shouldSort: true,
+			threshold: 0.3,
+			location: 0,
+			distance: 100,
+			maxPatternLength: 32,
+			minMatchCharLength: 1,
+			keys: k
+		};
+
+		return (new Fuse(l, options)).search(q);
+	}
+
+
+	
+
+
+
+	function start_loading_animation() {
+		let main = document.querySelector("main");
+		main.innerHTML = "Loading..."
+	}
+
+
+</script>
+
+</body>
+
+</html>

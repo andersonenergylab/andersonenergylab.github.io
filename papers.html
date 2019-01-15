@@ -9,14 +9,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 </head>
-<body onload="load_people(display_people)">
+<body onload="load_papers()">
 	<header>
 		<div id="top">
 
 			<a id="logo" href="index.html">
 				<h1>Anderson Laboratory</h1>
 				<h3 style="color:#092935">Biological & Environmental Engineering</h3>
-	<!-- 			<img id="cornellEmblem" src="images/cornell-reduced-black.svg"> -->
+			<!-- <img id="cornellEmblem" src="images/cornell-reduced-black.svg"> -->
 			</a>
 			<div id="search">
 				<input type="text" name="search" placeholder="Search Anderson Lab">
@@ -43,11 +43,15 @@
 
 	<main>
 
-		<div id="current"></div>
-		<div>
-			<h2 style="margin:1em">Alumni</h2>
-			<div id="alumni" style="display: flex;flex-wrap: wrap;">
-		</div>
+		<h2 style="padding: 1em 4em;color:#092935;">Publications</h2>
+
+<!-- 		<section class="paper">
+			<h3>Statistical Bus Ranking for Flexible Robust Unit Commitment</h3>
+			<h4>Amandeep Gupta, Lindsay Anderson</h4>
+			<h4>IEEE Transactions on Power Systems (2018)</h4>
+			<a href="https://doi.org/10.1109/TPWRS.2018.2864131" target="_blank">Link</a>
+
+		</section> -->
 		
 	</main>
 
@@ -69,63 +73,43 @@
 
 
 <script>
-	//load and parse people.json
-	function load_people(callback) {
+	//load and parse papers.json
+	function load_papers() {
 		let request = new XMLHttpRequest();
 		request.onreadystatechange = function () {
 			if (request.readyState === XMLHttpRequest.DONE) {
-				let people = JSON.parse(request.responseText);
-				window.people = people
-				callback(people);
+				let papers = JSON.parse(request.responseText);
+				display_papers(papers);
 			}
 		}
-		request.open("GET", "people.json");
+		request.open("GET", "papers.json");
 		request.send();
 	}
 
-	//display people in page
-	function display_people(list) {
-
-		list.sort(p => (p.current) ? -1 : 1);
-
+	//display papers in page
+	function display_papers(list) {
 		list.forEach(function (p) {
 
-			if (p.current){
-				let section = document.createElement("section");
-				section.setAttribute("class", "bio");
-				let img = document.createElement("div");
-					img.setAttribute("class", "headshot");
-					img.style.backgroundImage = "url(images/people/"+p.name.replace(/ /g, "")+".jpg)"
-				let name = document.createElement("h3");
-					name.innerText = p.name + ", " + p.title;
-				let position = document.createElement("h4");
-					position.innerText = p.position;
-				let bio = document.createElement("p");
-					bio.innerHTML = p.bio;
+			let section = document.createElement("section");
+				section.setAttribute("class", "paper");
+			let title = document.createElement("h4");
+				title.innerText = p.title;
+			let authors = document.createElement("h5");
+				authors.innerText = p.authors.join(", ");
+			let publisher = document.createElement("h5");
+				publisher.innerText = p.publisher + " ("+p.date+")";
+			let link = document.createElement("a");
+				link.href = p.link;
+				link.target = "_blank";
+				link.innerText = "Link";
 
-				section.appendChild(img);
-				section.appendChild(name);
-				section.appendChild(position);
-				section.appendChild(bio);
+			section.appendChild(title);
+			section.appendChild(authors);
+			section.appendChild(publisher);
+			section.appendChild(link);
 
-				document.querySelector("#current").appendChild(section);
-			}
+			document.querySelector("main").appendChild(section);
 
-			else{
-				let bio = document.createElement("div");
-				bio.setAttribute("class", "alumni");
-				let img = document.createElement("div");
-					img.setAttribute("class", "headshot");
-					img.style.backgroundImage = "url(images/people/"+p.name.replace(/ /g, "")+".jpg)"
-				let name = document.createElement("h3");
-					name.innerText = p.name + ", " + p.title;
-				
-
-				bio.appendChild(img);
-				bio.appendChild(name);
-
-				document.querySelector("#alumni").appendChild(bio);
-			}
 		});
 	}
 

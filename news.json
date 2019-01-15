@@ -1,83 +1,23 @@
 [
-	{"date":"July 2018", 
-		"events":[
-			"Congratulations to Amandeep Gupta on the acceptance of his paper “Statistical Bus Ranking for Flexible Robust Unit Commitment” in the IEEE Transactions on Power Systems!",
-			"The National Offshore Wind Research and Development Consortium is announced by U.S. Department of Energy and will be led by the New York State Energy Research and Development Authority (NYSERDA) and Stony Brook University, with participation of Profs. Anderson, Barthelmie, and Pryor. Read the Chronicle story <a target='_blank' href='http://news.cornell.edu/stories/2018/07/cornell-professors-contribute-winning-offshore-wind-energy-alliance'>here</a>",
-			"Effective July 1, Lindsay will be taking on a leadership role with the Atkinson Center for a Sustainable Future, as the Kathy Dwyer Marble and Curt Marble Faculty Director for Energy"
-		]
-	},
-	{"date":"June 2018", 
-		"events":[
-			"Welcome Alumni and friends to Reunion 2018! Come and see all the ways that Cornell is helping the world transition to a Sustainable Energy Future."
-		]
-	},
-	{"date":"May 2018", 
-		"events":[
-			"Congratulations to Dr. Ge (Claire) Gao on the arrival of her baby son Salomon!"
-		]
-	},
-	{"date":"April 2018", 
-		"events":[
-			"Dr. Ge (Claire) Gao has joined the Anderson Lab as a Postdoctoral Associate. Claire received her Ph.D. in Industrial Engineering at Iowa State University this year. Welcome Claire!",
-			"Dr. Luckny Zéphyr will start his first faculty position at Laurentian University (Canada) on July 1, 2018. Congrats Luckny! We will miss you!"
-		]
-	},
-	{"date":"June 2017", 
-		"events":[
-			"Prof. Anderson is promoted to Associate Professor with Tenure. This is an honor for everyone in the lab — thanks to all of you for your support and hard work toward our team goals!"
-		]
-	},
-	{"date":"May 2017", 
-		"events":[
-			"Congratulations to Dr. Lingfeng Cheng on successful defense of his dissertation!  Best of luck on your new adventure at Morgan Stanley!"
-		]
-	},
-	{"date":"December 2016", 
-		"events":[
-			"Congratulations to Amandeep Gupta on the successful completion of his A-Exam."
-		]
-	},
-	{"date":"November 2016", 
-		"events":[
-			"Lindsay is awarded the College of Engineering Excellence in Research Award. Thanks to everyone in the lab for supporting our mission!"
-		]
-	},
-	{"date":"August 2016", 
-		"events":[
-			"Anderson lab awarded a new grant from the US Department of Energy and the National Energy Technology Lab to study “Management of risk and uncertainty through optimized co-operation of transmission systems and microgrids with responsive loads.” For more information, see the DoE Funding announcement",
-			"Congratulations to Lingfeng Cheng on his newest journal publication! Appearing in Energy Conversion and Management: <a target='_blank' href='http://dx.doi.org/10.1016/j.enconman.2016.08.017'>“Long term planning and hedging for a lignocellulosic biorefinery in a carbon constrained world.”</a>"
-		]
-	},
-	{"date":"June 2016", 
-		"events":[
-			"Dr. Maureen Murage’s work on Wind integration in Kenya is presented at the IEEE Power Africa conference in Livingstone, Zambia.",
-			"Congratulations to Dr. Laura Tupper on successful defense of her dissertation! Good luck to Dr. Tupper on her new adventure as an Assistant Professor of Mathematics and Statistics at Williams College!"
-		]
-	},
-	{"date":"May 2016", 
-		"events":[
-			"Congratulation to Dr. Maureen Murage on the successful defense of her dissertation!",
-			"Congratulations to Lingfeng Cheng on his first journal publication! Appearing in Applied Energy entitled: “Financial sustainability for a lignocellulosic biorefinery under carbon constraints and price downside risk.” doi:10.1016/j.apenergy.2016.05.089"
-		]
-	},
-	{"date":"April 2016", 
-		"events":[
-			"Lindsay presents in the Clean Energy Institute speaker series at University of Washington in Seattle."
-		]
-	},
-	{"date":"December 2015", 
-		"events":[
-			"Anderson Lab is featured in NEW research.cornell feature <a target='_blank' href='https://research.cornell.edu/news-features/integrating-renewable-energy-technologies#highlight-144414986979'>article</a>"
-		]
-	},
-	{"date":"February 2015", 
-		"events":[
-			"Lindsay Anderson is awarded an NSF Career Award for the project entitled: “Maximizing Renewable Energy Integration: Optimal Management of Uncertainty with Responsive Demand“"
-		]
-	},
-	{"date":"January 2015", 
-		"events":[
-			"New paper accepted for publication in Energy Policy: Cardell, J. B., & Anderson, C. L. (2015). Targeting existing power plants: EPA emission reduction with wind and demand response. Energy Policy, 80, 11–23. doi:10.1016/j.enpol.2015.01.021"
-		]
-	}
+	{"date":"July 2018","event":"Congratulations to Amandeep Gupta on the acceptance of his paper “Statistical Bus Ranking for Flexible Robust Unit Commitment” in the IEEE Transactions on Power Systems!"},
+	{"date":"July 2018","event":"The National Offshore Wind Research and Development Consortium is announced by U.S. Department of Energy and will be led by the New York State Energy Research and Development Authority (NYSERDA) and Stony Brook University, with participation of Profs. Anderson, Barthelmie, and Pryor. Read the Chronicle story <a target='_blank' href='http://news.cornell.edu/stories/2018/07/cornell-professors-contribute-winning-offshore-wind-energy-alliance'>here</a>"},
+	{"date":"July 2018","event":"Effective July 1, Lindsay will be taking on a leadership role with the Atkinson Center for a Sustainable Future, as the Kathy Dwyer Marble and Curt Marble Faculty Director for Energy"},
+	{"date":"June 2018","event":"Welcome Alumni and friends to Reunion 2018! Come and see all the ways that Cornell is helping the world transition to a Sustainable Energy Future."},
+	{"date":"May 2018","event":"Congratulations to Dr. Ge (Claire) Gao on the arrival of her baby son Salomon!"},
+	{"date":"April 2018","event":"Dr. Ge (Claire) Gao has joined the Anderson Lab as a Postdoctoral Associate. Claire received her Ph.D. in Industrial Engineering at Iowa State University this year. Welcome Claire!"},
+	{"date":"April 2018","event":"Dr. Luckny Zéphyr will start his first faculty position at Laurentian University (Canada) on July 1, 2018. Congrats Luckny! We will miss you!"},
+	{"date":"June 2017","event":"Prof. Anderson is promoted to Associate Professor with Tenure. This is an honor for everyone in the lab — thanks to all of you for your support and hard work toward our team goals!"},
+	{"date":"May 2017","event":"Congratulations to Dr. Lingfeng Cheng on successful defense of his dissertation!  Best of luck on your new adventure at Morgan Stanley!"},
+	{"date":"December 2016","event":"Congratulations to Amandeep Gupta on the successful completion of his A-Exam."},
+	{"date":"November 2016","event":"Lindsay is awarded the College of Engineering Excellence in Research Award. Thanks to everyone in the lab for supporting our mission!"},
+	{"date":"August 2016","event":"Anderson lab awarded a new grant from the US Department of Energy and the National Energy Technology Lab to study “Management of risk and uncertainty through optimized co-operation of transmission systems and microgrids with responsive loads.” For more information, see the DoE Funding announcement"},
+	{"date":"August 2016","event":"Congratulations to Lingfeng Cheng on his newest journal publication! Appearing in Energy Conversion and Management: <a target='_blank' href='http://dx.doi.org/10.1016/j.enconman.2016.08.017'>“Long term planning and hedging for a lignocellulosic biorefinery in a carbon constrained world.”</a>"},
+	{"date":"June 2016","event":"Dr. Maureen Murage’s work on Wind integration in Kenya is presented at the IEEE Power Africa conference in Livingstone, Zambia."},
+	{"date":"June 2016","event":"Congratulations to Dr. Laura Tupper on successful defense of her dissertation! Good luck to Dr. Tupper on her new adventure as an Assistant Professor of Mathematics and Statistics at Williams College!"},
+	{"date":"May 2016","event":"Congratulation to Dr. Maureen Murage on the successful defense of her dissertation!"},
+	{"date":"May 2016","event":"Congratulations to Lingfeng Cheng on his first journal publication! Appearing in Applied Energy entitled: “Financial sustainability for a lignocellulosic biorefinery under carbon constraints and price downside risk.” doi:10.1016/j.apenergy.2016.05.089"},
+	{"date":"April 2016","event":"Lindsay presents in the Clean Energy Institute speaker series at University of Washington in Seattle."},
+	{"date":"December 2015","event":"Anderson Lab is featured in NEW research.cornell feature <a target='_blank' href='https://research.cornell.edu/news-features/integrating-renewable-energy-technologies#highlight-144414986979'>article</a>"},
+	{"date":"February 2015","event":"Lindsay Anderson is awarded an NSF Career Award for the project entitled: “Maximizing Renewable Energy Integration: Optimal Management of Uncertainty with Responsive Demand“"},
+	{"date":"January 2015","event":"New paper accepted for publication in Energy Policy: Cardell, J. B., & Anderson, C. L. (2015). Targeting existing power plants: EPA emission reduction with wind and demand response. Energy Policy, 80, 11–23. doi:10.1016/j.enpol.2015.01.021"}
 ]
