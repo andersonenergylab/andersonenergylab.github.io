@@ -426,3 +426,14 @@ a{
 	color: #757575;
 	margin: 0;
 }
+
+/*SEARCH*/
+
+.headshot.result{
+	width: 100px;
+	height: 100px;
+}
+
+.bio.result{
+	min-height: 100px;
+}

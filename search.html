@@ -56,7 +56,8 @@
 
 
 	<footer>
-		<address>
+		<div>
+			<address>
 			C. Lindsay Anderson &#183; 316 Riley Robb Hall &#183; <a href="mailto:cla28@cornell.edu">cla28@cornell.edu</a>
 		</address>
 
@@ -67,23 +68,39 @@
 		<br>
 
 		&copy;2018 Anderson Lab
+		</div>
+		
 	</footer>
 
 <script>	
 	function search() {
 		start_loading_animation();
 
+		let people_container = document.createElement("div"),
+			papers_container = document.createElement("div"),
+			news_container = document.createElement("div");
+
+			// people_container.id = "people-container";
+			// papers_container.id = "papers-container";
+			// news_container.id = "news_container";
+
+			document.querySelector("main").appendChild(people_container);
+			document.querySelector("main").appendChild(papers_container);
+			document.querySelector("main").appendChild(news_container);
+
 		let query = document.querySelector("#search_box").value;
 
 		load_json("people.json", function (list) {
 			window.people_results = fuse(["name"], query, list);
 			console.log(people_results)
+			display_people_results(people_results, people_container)
 
 		});
 
 		load_json("papers.json", function (list) {
 			window.papers_results = fuse(["authors", "title", "publisher", "keywords"], query, list);
 			console.log(papers_results)
+			display_papers(papers_results, papers_container)
 
 		});
 
@@ -93,6 +110,64 @@
 		});
 
 		//stop_loading_animation();
+	}
+
+
+	//display list of papers in element container
+	function display_papers(list, container) {
+		list.forEach(function (p) {
+
+			let section = document.createElement("section");
+				section.setAttribute("class", "paper");
+			let title = document.createElement("h4");
+				title.innerText = p.title;
+			let authors = document.createElement("h5");
+				authors.innerText = p.authors.join(", ");
+			let publisher = document.createElement("h5");
+				publisher.innerText = p.publisher + " ("+p.date+")";
+			let link = document.createElement("a");
+				link.href = p.link;
+				link.target = "_blank";
+				link.innerText = "Link";
+
+			section.appendChild(title);
+			section.appendChild(authors);
+			section.appendChild(publisher);
+			section.appendChild(link);
+
+			container.appendChild(section);
+
+		});
+	}
+
+	//display people from search in list inside container
+	function display_people_results(list, container) {
+
+		list.sort(p => (p.current) ? -1 : 1);
+
+		list.forEach(function (p) {
+
+			
+				let section = document.createElement("section");
+				section.setAttribute("class", "bio result");
+				let img = document.createElement("div");
+					img.setAttribute("class", "headshot result");
+					img.style.backgroundImage = "url(images/people/"+p.name.replace(/ /g, "")+".jpg)"
+				let name = document.createElement("h3");
+					name.innerText = p.name + ", " + p.title;
+				let position = document.createElement("h4");
+					position.innerText = p.position;
+
+				section.appendChild(img);
+				section.appendChild(name);
+				section.appendChild(position);
+
+			
+
+	
+				container.appendChild(section);
+			
+		});
 	}
 
 
