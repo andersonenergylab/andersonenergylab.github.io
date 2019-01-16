@@ -8,8 +8,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-	<script type="text/javascript" src="fuse.min.js"></script>
-
+	<script type="text/javascript" src="scripts/fuse.min.js"></script>
+	<script type="text/javascript" src="scripts/search.js"></script>
+	
 </head>
 <body onload="">
 	<header>
@@ -109,7 +110,7 @@
 			console.log(news_results)
 		});
 
-		//stop_loading_animation();
+		stop_loading_animation();
 	}
 
 
@@ -161,10 +162,6 @@
 				section.appendChild(img);
 				section.appendChild(name);
 				section.appendChild(position);
-
-			
-
-	
 				container.appendChild(section);
 			
 		});
@@ -197,14 +194,13 @@
 		return (new Fuse(l, options)).search(q);
 	}
 
-
-	
-
-
-
 	function start_loading_animation() {
 		let main = document.querySelector("main");
-		main.innerHTML = "Loading..."
+		main.innerHTML = "<div id='loading-animation'>Loading...</div>";
+	}
+
+	function stop_loading_animation() {
+		document.querySelector("#loading-animation").remove();
 	}
 
 

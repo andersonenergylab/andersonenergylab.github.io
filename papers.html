@@ -8,19 +8,22 @@
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+	<script type="text/javascript" src="scripts/fuse.min.js"></script>
+	<script type="text/javascript" src="scripts/search.js"></script>
+
 </head>
-<body onload="load_papers()">
+<body onload="load_json('papers.json', display_papers)">
 	<header>
 		<div id="top">
 
 			<a id="logo" href="index.html">
 				<h1>Anderson Laboratory</h1>
 				<h3 style="color:#092935">Biological & Environmental Engineering</h3>
-			<!-- <img id="cornellEmblem" src="images/cornell-reduced-black.svg"> -->
+	<!-- 			<img id="cornellEmblem" src="images/cornell-reduced-black.svg"> -->
 			</a>
 			<div id="search">
-				<input type="text" name="search" placeholder="Search Anderson Lab">
-				<button></button>
+				<input type="text" id="search_box" placeholder="Search Anderson Lab">
+				<button onclick="search()"></button>
 			</div>
 		</div>
 		<nav>

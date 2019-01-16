@@ -8,8 +8,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+	<script type="text/javascript" src="scripts/fuse.min.js"></script>
+	<script type="text/javascript" src="scripts/search.js"></script>
+
 </head>
-<body onload="load_news()">
+<body onload="load_json('news.json', function(list){display_news(list, document.querySelector('#news .content'))})">
 	<header>
 		<div id="top">
 
@@ -19,8 +22,8 @@
 	<!-- 			<img id="cornellEmblem" src="images/cornell-reduced-black.svg"> -->
 			</a>
 			<div id="search">
-				<input type="text" name="search" placeholder="Search Anderson Lab">
-				<button></button>
+				<input type="text" id="search_box" placeholder="Search Anderson Lab">
+				<button onclick="search()"></button>
 			</div>
 		</div>
 		<nav>
@@ -114,22 +117,9 @@
 </body>
 
 <script>
-	//load and parse news.json
-	function load_news() {
-		let request = new XMLHttpRequest();
-		request.onreadystatechange = function () {
-			if (request.readyState === XMLHttpRequest.DONE) {
-				let news = JSON.parse(request.responseText);
-				console.log(news);
-				display_news(news);
-			}
-		}
-		request.open("GET", "news.json");
-		request.send();
-	}
 
 	//display news in page
-	function display_news(list) {
+	function display_news(list, container) {
 		list.sort(function (a,b) {
 			return (new Date(b.date)) - (new Date(a.date));
 		});
@@ -147,7 +137,7 @@
 				let date = document.createElement("h4");
 				date.innerText = d.date;
 				div.appendChild(date);
-				document.querySelector("#news .content").appendChild(current_container);
+				container.appendChild(current_container);
 			}
 
 			let p = document.createElement("p");

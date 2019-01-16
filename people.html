@@ -8,8 +8,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+	<script type="text/javascript" src="scripts/fuse.min.js"></script>
+	<script type="text/javascript" src="scripts/search.js"></script>
+
 </head>
-<body onload="load_people(display_people)">
+<body onload="load_json('people.json', display_people)">
 	<header>
 		<div id="top">
 
@@ -19,8 +22,8 @@
 	<!-- 			<img id="cornellEmblem" src="images/cornell-reduced-black.svg"> -->
 			</a>
 			<div id="search">
-				<input type="text" name="search" placeholder="Search Anderson Lab">
-				<button></button>
+				<input type="text" id="search_box" placeholder="Search Anderson Lab">
+				<button onclick="search()"></button>
 			</div>
 		</div>
 		<nav>
@@ -69,19 +72,6 @@
 
 
 <script>
-	//load and parse people.json
-	function load_people(callback) {
-		let request = new XMLHttpRequest();
-		request.onreadystatechange = function () {
-			if (request.readyState === XMLHttpRequest.DONE) {
-				let people = JSON.parse(request.responseText);
-				window.people = people
-				callback(people);
-			}
-		}
-		request.open("GET", "people.json");
-		request.send();
-	}
 
 	//display people in page
 	function display_people(list) {
