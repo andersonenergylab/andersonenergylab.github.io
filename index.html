@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="scripts/search.js"></script>
 
 </head>
-<body onload="load_json('news.json', function(list){display_news(list, document.querySelector('#news .content'))})">
+<body onload="load_json('news.json', function(list){display_news(list, document.querySelector('#news .content'))}); load_json('gallery.json', gallery_load)">
 	<header>
 		<div id="top">
 
@@ -83,8 +83,8 @@
 		<section id="gallery">
 			<h2>Gallery</h2>
 			<div id="slideshow">
-				<img src="https://cpb-us-e1.wpmucdn.com/blogs.cornell.edu/dist/3/3658/files/2013/09/AndersonGroup_2013-2cbeubg.jpg">
-				<h3 style="text-align: center; color:inherit;"> &lsaquo; 1/5 &rsaquo;</h3>
+				<img id="gallery_img" src="" style="width:500px;height:500px;">
+				<h3 style="text-align: center; color:inherit;"> <button onclick="gallery_previous()">&lsaquo;</button> <span id="gallery_current"></span> <button onclick="gallery_next()">&rsaquo;</button></h3>
 			</div>
 		</section>
 
@@ -176,6 +176,29 @@
 			
 		}
 	}
+
+	function gallery_load(pics){
+
+		window.gallery = {current:0, list:pics};
+		gallery_display_current();		
+	}
+
+	function gallery_display_current(){
+
+		let current = window.gallery.current;
+		document.querySelector("#gallery_img").src = "images/gallery/" + window.gallery.list[current].file;
+		document.querySelector("#gallery_current").innerText = (current + 1 ) + "/" + window.gallery.list.length;
+	}
+
+	function gallery_next(){
+		window.gallery.current = (window.gallery.current + 1) % (window,gallery.list.length);
+		gallery_display_current();
+	}
+	function gallery_previous(){
+		window.gallery.current = ((window.gallery.current) + (window,gallery.list.length) - 1) % (window,gallery.list.length);
+		gallery_display_current();
+	}
+
 </script>
 
 </html>
