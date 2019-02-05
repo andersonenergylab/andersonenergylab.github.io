@@ -83,8 +83,9 @@
 		<section id="gallery">
 			<h2>Gallery</h2>
 			<div id="slideshow">
-				<img id="gallery_img" src="" style="width:500px;height:500px;">
-				<h3 style="text-align: center; color:inherit;"> <button onclick="gallery_previous()">&lsaquo;</button> <span id="gallery_current"></span> <button onclick="gallery_next()">&rsaquo;</button></h3>
+				<img id="gallery_img" src="" style="width:auto;height:300px;">
+				<div id="gallery_description" style="text-align: center;font-size:13pt;font-style: italic;color:darkgray;width: 100%;"></div>
+				<h3 style="text-align: center; color:inherit;"> <button onclick="gallery_previous()">&lsaquo;</button> <span style="text-align: center;font-size:13pt;font-style: italic;color:darkgray;" id="gallery_current"></span> <button onclick="gallery_next()">&rsaquo;</button></h3>
 			</div>
 		</section>
 
@@ -188,6 +189,7 @@
 		let current = window.gallery.current;
 		document.querySelector("#gallery_img").src = "images/gallery/" + window.gallery.list[current].file;
 		document.querySelector("#gallery_current").innerText = (current + 1 ) + "/" + window.gallery.list.length;
+		document.querySelector("#gallery_description").innerText = window.gallery.list[current].description;
 	}
 
 	function gallery_next(){
