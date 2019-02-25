@@ -1,4 +1,7 @@
 function search() {
+	let query = document.querySelector("#search_box").value;
+	if (query.length == 0) return;
+	
 	start_loading_animation();
 
 	let people_container = document.createElement("div"),
@@ -15,10 +18,10 @@ function search() {
 		document.querySelector("main").appendChild(papers_container);
 		document.querySelector("main").appendChild(news_container);
 
-	let query = document.querySelector("#search_box").value;
+	
 
 	load_json("people.json", function (list) {
-		window.people_results = fuse(["name"], query, list);
+		window.people_results = fuse(["name", "bio"], query, list);
 		console.log(people_results)
 		display_people_results(people_results, people_container)
 
@@ -38,6 +41,8 @@ function search() {
 	});
 
 	stop_loading_animation();
+
+	return false;
 }
 
 

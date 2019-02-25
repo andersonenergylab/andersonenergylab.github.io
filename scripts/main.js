@@ -23,3 +23,11 @@ function parse_tsv(tsv, fields){
 	
 	return list;
 }
+
+function setup() {
+	document.querySelector("#search_box").onkeypress = function (e) {
+			console.log(e);
+			console.log(e.keyCode);
+			if (e.keyCode == '13') search();
+	};
+}

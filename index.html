@@ -10,9 +10,10 @@
 
 	<script type="text/javascript" src="scripts/fuse.min.js"></script>
 	<script type="text/javascript" src="scripts/search.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
 
 </head>
-<body onload="load_json('news.json', function(list){display_news(list, document.querySelector('#news .content'))}); load_json('gallery.json', gallery_load)">
+<body onload="setup();load_json('news.json', function(list){display_news(list, document.querySelector('#news .content'))}); load_json('gallery.json', gallery_load)">
 	<header>
 		<div id="top">
 
@@ -39,7 +40,7 @@
 				</div>
 			</div>
 			<a href="people.html" class="nav--link">PEOPLE</a>
-			<a class="nav--link">RESEARCH</a>
+			<a href="research.html" class="nav--link">RESEARCH</a>
 			<a href="papers.html" class="nav--link">PAPERS</a>
 		</nav>
 	</header>
@@ -85,7 +86,7 @@
 			<div id="slideshow">
 				<img id="gallery_img" src="" style="width:auto;height:300px;">
 				<div id="gallery_description" style="text-align: center;font-size:13pt;font-style: italic;color:darkgray;width: 100%;"></div>
-				<h3 style="text-align: center; color:inherit;"> <button onclick="gallery_previous()">&lsaquo;</button> <span style="text-align: center;font-size:13pt;font-style: italic;color:darkgray;" id="gallery_current"></span> <button onclick="gallery_next()">&rsaquo;</button></h3>
+				<h3 style="text-align: center; color:inherit;"> <button onclick="gallery_previous()">&lsaquo;</button><span style="text-align: center;font-size:13pt;font-style: italic;color:darkgray;" id="gallery_current"></span> <button onclick="gallery_next()">&rsaquo;</button></h3>
 			</div>
 		</section>
 
