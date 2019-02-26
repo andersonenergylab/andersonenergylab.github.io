@@ -93,7 +93,7 @@
 					case "Undergraduate Research Assistant":
 						return 4
 					default:
-						return 6
+						return 0
 				}
 			}
 
@@ -105,15 +105,16 @@
 		list.forEach(function (p) {
 
 			if (p.current){
+				console.log("url(images/people/"+p.name.replace(/ |\(|\)/g, "")+".jpg)")
 				let section = document.createElement("section");
 				section.setAttribute("class", "bio");
 				let img = document.createElement("div");
 					img.setAttribute("class", "headshot");
-					img.style.backgroundImage = "url(images/people/"+p.name.replace(/ /g, "")+".jpg)"
+					img.style.backgroundImage = "url(images/people/"+p.name.replace(/ |\(|\)/g, "")+".jpg)"
 				let name = document.createElement("h3");
 					name.innerText = p.name + ", " + p.title;
 				let position = document.createElement("h4");
-					position.innerText = p.position;
+					position.innerHTML = p.position;
 				let bio = document.createElement("p");
 					bio.innerHTML = p.bio;
 
