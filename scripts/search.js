@@ -1,7 +1,7 @@
 function search() {
 	let query = document.querySelector("#search_box").value;
 	if (query.length == 0) return;
-	
+
 	start_loading_animation();
 
 	let people_container = document.createElement("div"),
@@ -115,7 +115,7 @@ function display_news_results(list, container) {
 //display people from search in list inside container
 function display_people_results(list, container) {
 
-	list.sort(p => (p.current) ? -1 : 1);
+	list.sort(sort_people);
 
 	list.forEach(function (p) {
 
@@ -123,11 +123,11 @@ function display_people_results(list, container) {
 		section.setAttribute("class", "bio result");
 		let img = document.createElement("div");
 			img.setAttribute("class", "headshot result");
-			img.style.backgroundImage = "url(images/people/"+p.name.replace(/ /g, "")+".jpg)"
+			img.style.backgroundImage = "url(images/people/"+p.name.replace(/ |\(|\)/g, "")+".jpg)"
 		let name = document.createElement("h3");
 			name.innerText = p.name + ", " + p.title;
 		let position = document.createElement("h4");
-			position.innerText = p.position;
+			position.innerHTML = p.position;
 
 		section.appendChild(img);
 		section.appendChild(name);

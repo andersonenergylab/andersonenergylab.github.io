@@ -31,3 +31,22 @@ function setup() {
 			if (e.keyCode == '13') search();
 	};
 }
+
+function sort_people(p1, p2) {
+		function rank(p){
+			if (p.name == "Lindsay Anderson") return 0;
+			switch(p.position){
+				case "Postdoctoral Student":
+					return 1
+				case "PhD Student":
+					return 2
+				case "MEng Student":
+					return 3
+				case "Undergraduate Research Assistant":
+					return 4
+				default:
+					return 5
+			}
+		}
+		return rank(p1) - rank(p2);
+}
