@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript">
-		let css = document.createElement('link')
-		css.rel = 'stylesheet'
-		css.href = 'v3.css?nocache=' + (new Date).getTime()
-		document.head.appendChild(css)
-	</script>
 	<title>Anderson Lab</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
@@ -19,6 +13,14 @@
 
 </head>
 <body onload="setup();load_json('papers.json', display_papers)">
+	<script type="text/javascript">
+		document.body.style.display = "none"
+		let css = document.createElement('link')
+		css.rel = 'stylesheet'
+		css.href = 'v3.css?nocache=' + (new Date).getTime()
+		document.head.appendChild(css)
+		css.onload = ()=>document.body.style.display = "initial"
+	</script>
 	<header>
 		<div id="top">
 
