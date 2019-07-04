@@ -139,6 +139,7 @@ function display_people_results(list, container) {
 
 
 function load_json(file_name, callback) {
+	file_name += "?nocache=" + (new Date).getTime();
 	let request = new XMLHttpRequest();
 	request.onreadystatechange = function () {
 		if (request.readyState === XMLHttpRequest.DONE) {

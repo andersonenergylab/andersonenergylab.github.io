@@ -17,16 +17,17 @@ body{
 }
 
 main{
-		/* background-image: url(images/cover5.jpg); */
+		
 		background-size: cover;
 		/* position: relative; */
 		background-attachment: fixed;
-		/* background: #357E9B; */
+		background-color: #ffffff;
 		/* background: #357e9b78; */
 		/* background-position-y: 130px; */
 		/* padding-top: 3em; */
 		padding-bottom: 3em;
 		position: relative;
+		font-family: 'Roboto', sans-serif;
 }
 
 
@@ -38,8 +39,9 @@ header{
 	display: block;
 	/* flex-direction: column; */
 	/* margin-bottom: 3em; */
-	background: #ffffff;
-	border-bottom: 1px solid #f3f3f3;
+	background: #e9f1f4;
+	/*border-bottom: 1px solid #f3f3f3;*/
+	padding-top: 1px;
 }
 
 header li{
@@ -126,22 +128,24 @@ nav{
     width: 100%;
     display: flex;
     justify-content: center;
-    background: white;
+    background: #e9f1f4;
+    top:0;
     /* margin: 0.5em 0 0 0; */
     /* margin: 0.5em auto; */
-    border-top: 1px solid #68B332;
+    /* border-top: 1px solid #68B332; */
     /* border-bottom: 1px solid #2ECC40; */
     /* position: fixed; */
     z-index: 1;
 }
 
 .nav--link{
-	padding: 1em;
+	padding: 0.7em;
 	cursor: pointer;
 	font-weight: bolder;
 	color: #092935;
 	background: inherit;
 	text-decoration: none;
+	font-size: large;
 }
 
 .nav--link:hover{
@@ -196,30 +200,27 @@ nav{
 	border-radius: inherit;
 }
 
-#about .background{/*    background-image: url(images/cover5.jpg);
-*/background-size: cover;z-index: -1;background-position-y: -40px;opacity: 0.9;background: #357e9b78;}
+#about .background{
+  background-image: url(images/cover5.jpg);
+  background-size: cover;
+  z-index: -1;
+  background-position-y: -40px;
+  opacity: 0.9;
+  /* background: #357e9b78; */
+}
 
 #about{
 	/* color: #092935; */
 	position: relative;
-	min-height: 400px;
-	/* background-image: url(images/cover5.jpg); */
+	min-height: 500px;
+	background-image: url(images/cover5.jpg);
 	background-size: cover;
 	background: transparent;
 	margin-bottom: 0;
 }
 
 .bg{
-	background-image: url(images/cover5n.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	filter: blur(3px);
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height:100%;
-	/* transform: scale(.99); */
+	background-image: url(images/cover5n.jpg), url(https://images.pexels.com/photos/1076807/pexels-photo-1076807.jpeg); */
 	z-index: -1;
 }
 
@@ -360,7 +361,7 @@ footer{
 	background-color: #092935;
 	padding: 1em 0;
 	color: #F2F9DB;
-	border-top: 1px solid #68B332;
+	/* border-top: 1px solid #68B332; */
 	/* margin-top:20px; */
 }
 
@@ -384,6 +385,7 @@ a{
 	color: #092935;
 	min-height: 210px;
 	position: static;
+	background: transparent;
 	border-bottom: 1px solid #e2e2e2;
 }
 
