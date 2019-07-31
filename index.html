@@ -27,8 +27,10 @@
 		<div id="top">
 
 			<a id="logo" href="index.html">
+
 				<h1>Anderson Laboratory</h1>
 				<h3 style="color:#092935">Biological & Environmental Engineering</h3>
+				<!-- <img src="images/cornell-reduced-white.svg"> -->
 	<!-- 			<img id="cornellEmblem" src="images/cornell-reduced-black.svg"> -->
 			</a>
 			<div id="search">
@@ -48,6 +50,8 @@
 					<a href="#tweets">Tweets</a>
 				</div> -->
 			</div>
+			<a href="index.html#news" class="nav--link">NEWS</a>
+			<a href="index.html#gallery" class="nav--link">GALLERY</a>
 			<a href="people.html" class="nav--link">PEOPLE</a>
 
 			<a href="papers.html" class="nav--link">PAPERS</a>
@@ -59,7 +63,7 @@
 		</nav>
 	</header>
 
-	<main style="background-image: url(images/cover.jpg);">
+	<main style="background-image: url(images/cover2.jpg);">
 		<!-- <div class="bg"></div> -->
 		<section id="about">
 			
@@ -96,12 +100,15 @@
 		</section>
 
 		<section id="gallery">
-			<h2>Gallery</h2>
 			<div id="slideshow">
-				<img id="gallery_img" src="" style="width:auto;height:300px;">
-				<div id="gallery_description" style="text-align: center;font-size:13pt;font-style: italic;color:darkgray;width: 100%;"></div>
-				<h3 style="text-align: center; color:inherit;"> <button onclick="gallery_previous()">&lsaquo;</button><span style="text-align: center;font-size:13pt;font-style: italic;color:darkgray;" id="gallery_current"></span> <button onclick="gallery_next()">&rsaquo;</button></h3>
+				<!-- <img id="gallery_img" src="" style=""> -->
+				
+					<button style="left: 0;" onclick="gallery_previous()">&lsaquo;</button>
+					
+					<button style="right: 0;"onclick="gallery_next()">&rsaquo;</button>
 			</div>
+			<div id="gallery_description"></div>
+			<div id="gallery_current"></div> 
 		</section>
 
 <!-- 
@@ -202,8 +209,21 @@
 	function gallery_display_current(){
 
 		let current = window.gallery.current;
-		document.querySelector("#gallery_img").src = "images/gallery/" + window.gallery.list[current].file;
-		document.querySelector("#gallery_current").innerText = (current + 1 ) + "/" + window.gallery.list.length;
+		document.querySelector("#slideshow").style.backgroundImage = `url(images/gallery/${window.gallery.list[current].file})`;
+		// document.querySelector("#gallery_current").innerText = (current + 1 ) + "/" + window.gallery.list.length;
+
+		document.querySelector("#gallery_current").innerHTML = "";
+		for (var i=0; i<window.gallery.list.length; i++){
+			let d = document.createElement("div");
+			d.setAttribute("class", "gallery_indicator");
+			if (i==current) {
+				d.setAttribute("class", "gallery_indicator gallery_indicator_current");
+			}
+			document.querySelector("#gallery_current").appendChild(d)
+			
+		}
+
+
 		document.querySelector("#gallery_description").innerText = window.gallery.list[current].description;
 	}
 

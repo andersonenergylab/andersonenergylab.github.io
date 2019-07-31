@@ -4,6 +4,9 @@ function search() {
 
 	start_loading_animation();
 
+
+	document.querySelector("main").style.background = "white"
+
 	let people_container = document.createElement("div"),
 		papers_container = document.createElement("div"),
 		news_container = document.createElement("div");

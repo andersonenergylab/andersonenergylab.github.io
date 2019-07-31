@@ -12,7 +12,7 @@ body{
 	color: #464646;
 	margin: 0 auto;
 	/* background-color: #F2F9DB; */
-	overflow-x: hidden;
+	 overflow-x: hidden; 
 	/* min-height: 100%; */
 }
 
@@ -39,7 +39,7 @@ header{
 	display: block;
 	/* flex-direction: column; */
 	/* margin-bottom: 3em; */
-	background: #e9f1f4;
+	background: #357E9B;
 	/*border-bottom: 1px solid #f3f3f3;*/
 	padding-top: 1px;
 }
@@ -68,7 +68,7 @@ header a{
 	/* margin: auto; */
 	cursor: pointer;
 	/* background: #F2F9DB; */
-	color: #357E9B;
+	color: #ffffff;
 	font-family: 'Fira Sans', sans-serif;
 	margin: 0;
 	float: left;
@@ -132,7 +132,7 @@ nav{
     top:0;
     /* margin: 0.5em 0 0 0; */
     /* margin: 0.5em auto; */
-    /* border-top: 1px solid #68B332; */
+    /* border-top: 2px solid #68B332; */
     /* border-bottom: 1px solid #2ECC40; */
     /* position: fixed; */
     z-index: 1;
@@ -213,9 +213,9 @@ nav{
 	/* color: #092935; */
 	position: relative;
 	min-height: 500px;
-	background-image: url(images/cover5.jpg);
+	/* background-image: url(images/cover1.jpg); */
 	background-size: cover;
-	background: transparent;
+	background: #00000052;
 	margin-bottom: 0;
 }
 
@@ -249,30 +249,80 @@ nav{
 
 #about .content{
 	margin: auto;
+	width: 90%;
 	margin-top: 5%;
 	/* padding: 1em; */
 	/* overflow: auto; */
+	color: white;
 	font-weight: bolder;
 	/* background: #12239a59; */
 }
 
 #gallery{
-	background-color: #f7f7f7;
+	background-color: #f7f7f761;
 	color:  #092935;
 }
 
 #slideshow img{
-	width: 70%;
-	min-width: 300px;
-	height: auto;
+	width: auto;
+	/*min-width: 300px;*/
+	height: 400px;
 	display: block;
 	margin: 1em auto;
 }
 
+#slideshow{
+	height: 500px;
+	width: 90%;
+	margin: auto;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+}
+
 #slideshow button{
-	background: white;
-    border: 1px solid #e0e0e0;
-    color: #6f6f6f;
+	position: absolute; 
+	top: 0;
+	background: transparent;
+	border: 0;
+	height: 100%;
+	width: 45px;
+	cursor: pointer;
+    font-size: 100px;
+    color: #00000073;
+    outline: none;
+}
+
+#slideshow button:hover{
+    color: #ffffff73;
+}
+#gallery_description{
+	text-align: center;
+    font-size: 13pt;
+    font-style: italic;
+    color: white;
+    width: 100%;
+    padding: 3px;
+}
+
+#gallery_current{
+	width: fit-content;
+	display: flex;
+	margin: auto;
+	margin-top: 5px;
+}
+
+.gallery_indicator{
+	width: 10px;
+	height: 10px;
+	background-color: #efefef;
+	border-radius: 10px;
+	margin-left: 10px;
+}
+
+.gallery_indicator_current{
+	background-color: #888888;
 }
 
 
@@ -298,7 +348,7 @@ section h3{
 #news{
 	/* background: #607d8b8c; */
 	color: #092935;
-	height: 350px;
+	height: 500px;
 }
 
 #news .background{
@@ -342,12 +392,12 @@ section h3{
 	padding-left: 0.5em;
 	padding-top: 0.5em;
 	padding-right: 0.5em;
-	height: 300px;
+	height: 400px;
 	overflow: auto;
 	width: 100%;
 	float: left;
 	background: #f3f3ff;
-	border-left: 5px solid #68b332;
+	border-left: 5px solid #3185bb;
 	overflow-x: hidden;
 }
 
@@ -403,7 +453,8 @@ a{
 .alumni{
 	/* float: left; */
 	padding: 1em;
-	height: 200px;
+	width: 200px;
+	height: 250px;
 	text-align: center;
 }
 
