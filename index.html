@@ -39,8 +39,8 @@
 			</div>
 		</div>
 		<nav>
-			<div id="small-logo">Anderson Laboratory</div>
-			<a href="index.html" class="nav--link" id="home">
+			<a href="index.html"><div id="small-logo">Anderson Laboratory</div></a>
+			<a href="index.html" class="nav--link" id="">
 				HOME
 
 			<!-- 	<div class="dropdown">
@@ -140,6 +140,8 @@
 </body>
 
 <script>
+	//this is so that links work after search, since search just replaces content
+	// document.querySelectorAll(".nav--link").forEach(e=>e.href = e.href.replace("?",""));
 
 	//display news in page
 	function display_news(list, container) {
@@ -202,7 +204,7 @@
 
 	function gallery_load(pics){
 
-		window.gallery = {current:0, list:pics};
+		window.gallery = {current:0, list:pics.reverse()};
 		gallery_display_current();		
 	}
 
@@ -210,8 +212,6 @@
 
 		let current = window.gallery.current;
 		document.querySelector("#slideshow").style.backgroundImage = `url(images/gallery/${window.gallery.list[current].file})`;
-		// document.querySelector("#gallery_current").innerText = (current + 1 ) + "/" + window.gallery.list.length;
-
 		document.querySelector("#gallery_current").innerHTML = "";
 		for (var i=0; i<window.gallery.list.length; i++){
 			let d = document.createElement("div");
@@ -220,10 +220,7 @@
 				d.setAttribute("class", "gallery_indicator gallery_indicator_current");
 			}
 			document.querySelector("#gallery_current").appendChild(d)
-			
 		}
-
-
 		document.querySelector("#gallery_description").innerText = window.gallery.list[current].description;
 	}
 
