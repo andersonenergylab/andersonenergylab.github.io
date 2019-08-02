@@ -1,4 +1,17 @@
 function search() {
+
+	window.people_results = []
+	window.news_results = []
+	window.papers_results = []
+
+	//this is so that links work after search, since search just replaces content
+	document.querySelectorAll(".nav--link").forEach(
+		e=>e.href = e.href.replace(/index.html#.*/, `index.html?#${e.innerText.toLowerCase()}`)
+	);
+
+	document.querySelector("main").style.minHeight = (window.innerWidth-300) + "px";
+
+
 	let query = document.querySelector("#search_box").value;
 	if (query.length == 0) return;
 
@@ -27,6 +40,7 @@ function search() {
 		window.people_results = fuse(["name", "bio"], query, list);
 		console.log(people_results)
 		display_people_results(people_results, people_container)
+		stop_loading_animation();
 
 	});
 
@@ -34,6 +48,7 @@ function search() {
 		window.papers_results = fuse(["authors", "title", "publisher", "keywords"], query, list);
 		console.log(papers_results)
 		display_papers(papers_results, papers_container)
+		stop_loading_animation();
 
 	});
 
@@ -41,9 +56,10 @@ function search() {
 		window.news_results = fuse(["event"], query, list);
 		console.log(news_results)
 		display_news_results(news_results, news_container)
+		stop_loading_animation();
 	});
 
-	stop_loading_animation();
+	
 
 	return false;
 }
@@ -174,5 +190,9 @@ function start_loading_animation() {
 }
 
 function stop_loading_animation() {
-	document.querySelector("#loading-animation").remove();
+	document.querySelector("#loading-animation").style.display = 'none';
+	if (!(people_results.length || news_results.length || papers_results.length)){
+		//no results
+		document.querySelector("main").innerHTML = "<h2 style='margin:20px'>No results</h2>"
+	}
 }
