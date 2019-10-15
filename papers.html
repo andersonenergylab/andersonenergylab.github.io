@@ -22,43 +22,6 @@
 		css.onload = ()=>document.body.style.display = "initial"
 	</script>
 	<header>
-		<div id="top">
-
-			<a id="logo" href="index.html">
-
-				<h1>Anderson Laboratory</h1>
-				<h3 style="color:#092935">Biological & Environmental Engineering</h3>
-				<!-- <img src="images/cornell-reduced-white.svg"> -->
-	<!-- 			<img id="cornellEmblem" src="images/cornell-reduced-black.svg"> -->
-			</a>
-			<div id="search">
-				<input type="text" id="search_box" placeholder="Search Anderson Lab">
-				<button onclick="search()"></button>
-			</div>
-		</div>
-		<nav>
-			<a href="index.html"><div id="small-logo">Anderson Laboratory</div></a>
-			<a href="index.html" class="nav--link" id="home">
-				HOME
-
-			<!-- 	<div class="dropdown">
-					<a href="#about">About</a>
-					<a href="#news">News</a>
-					<a href="#gallery">Gallery</a>
-					<a href="#tweets">Tweets</a>
-				</div> -->
-			</div>
-			<a href="index.html#news" class="nav--link">NEWS</a>
-			<a href="index.html#gallery" class="nav--link">GALLERY</a>
-			<a href="people.html" class="nav--link">PEOPLE</a>
-
-			<a href="papers.html" class="nav--link">PAPERS</a>
-			<!-- <a href="papers.html" class="nav--link">RESEARCH</a> -->
-			<!-- <a href="papers.html" class="nav--link">ABOUT</a>
-			<a href="papers.html" class="nav--link">ERC</a>
-			<a href="papers.html" class="nav--link">CONTACT</a> -->
-
-		</nav>
 	</header>
 
 	<main>
@@ -146,25 +109,25 @@
 	}
 
 	//fix header on scroll
-	window.onscroll = function () {
-		let nav = document.querySelector("nav"),
-			main = document.querySelector("main"),
-			logo = document.querySelector("#small-logo");
+	// window.onscroll = function () {
+	// 	let nav = document.querySelector("nav"),
+	// 		main = document.querySelector("main"),
+	// 		logo = document.querySelector("#small-logo");
 
-		if (window.pageYOffset > 104) {
-			main.style.paddingTop = "154px";
-			nav.style.position = "fixed";
-			nav.style.justifyContent = "flex-end";
-			logo.style.left = "5px";
+	// 	if (window.pageYOffset > 104) {
+	// 		main.style.paddingTop = "154px";
+	// 		nav.style.position = "fixed";
+	// 		nav.style.justifyContent = "flex-end";
+	// 		logo.style.left = "5px";
 
-		}
-		else{
-			nav.style.position = "initial"
-			main.style.paddingTop = "0";
-			nav.style.justifyContent = "center";
-			logo.style.left = "-300px";
-		}
-	}	
+	// 	}
+	// 	else{
+	// 		nav.style.position = "initial"
+	// 		main.style.paddingTop = "0";
+	// 		nav.style.justifyContent = "center";
+	// 		logo.style.left = "-300px";
+	// 	}
+	// }	
 
 </script>
 

@@ -24,12 +24,30 @@ function parse_tsv(tsv, fields){
 	return list;
 }
 
-function setup() {
-	document.querySelector("#search_box").onkeypress = function (e) {
+function setup(page="") {
+	if (page == "main"){
+		
+		document.querySelectorAll("section").forEach(e=>e.style.height = `${Math.max(600, window.innerHeight)}px`)
+		// document.querySelector("section#news").style.height = `${window.innerHeight}px`
+
+		document.querySelector("section#about").style.height = `${window.innerHeight - 100}px`
+	}
+	else{
+		document.body.style.background = "white"
+	}
+
+	fetch("header.html")
+	.then((response) => response.text())
+	.then((html) => {
+			document.querySelector("header").innerHTML = html;
+			document.querySelector("#search_box").onkeypress = function (e) {
 			console.log(e);
 			console.log(e.keyCode);
 			if (e.keyCode == '13') search();
 	};
+	})
+
+	
 }
 
 function sort_people(p1, p2) {
@@ -50,3 +68,11 @@ function sort_people(p1, p2) {
 		}
 		return rank(p1) - rank(p2);
 }
+
+function toggle_ham() {
+	console.log(2)
+	let ham = document.querySelector("#hamburger")
+	if (ham.getAttribute("class") == "hamburger_up") ham.setAttribute("class", "hamburger_down")
+	else ham.setAttribute("class", "hamburger_up")
+
+}		

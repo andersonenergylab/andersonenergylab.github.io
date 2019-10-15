@@ -129,7 +129,7 @@ function display_news_results(list, container) {
 
 			
 		});
-	}
+}
 
 //display people from search in list inside container
 function display_people_results(list, container) {
