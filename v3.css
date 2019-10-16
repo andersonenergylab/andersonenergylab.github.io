@@ -1,10 +1,5 @@
-/*
-	color scheme: #5580e9, #84ceeb, #5ab8eb, #c1c8e4, #885fd0;
-
-	or : #F2F9DB #B5D737 #68B332 #357E9B #092935
-
-
-*/
+@import url("https://fonts.googleapis.com/css?family=Yantramanav");
+/*@import url();*/
 body{/*font-family: 'Fira Sans', sans-serif;/*/font-family: 'Yantramanav', sans-serif;min-width: 765px;color: #464646;margin: 0 auto;/* background-color: #F2F9DB; */overflow-x: hidden;/* min-height: 100%; */background-size: cover;background-attachment: fixed;background-image: url(images/cover8.jpg);min-width: 735px;/* overflow-x: scroll; */}
 
 main{
