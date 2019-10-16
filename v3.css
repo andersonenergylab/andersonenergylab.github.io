@@ -139,19 +139,61 @@ nav{
     order:2;
 }
 
-@media only screen and (max-width: 1260px){
+@media only screen and (max-device-width: 768px){
 	nav{
 		/*width: 100%; */
+		display: none;
+	}
+	#logo{
+		/*margin-right: 100%*/
+		/* width:50%; */
+	}
+	#logo h1{
+		font-size: 47px;
+	}
+	#logo h3{
+		font-size: 24px;
+	}
+	#search input{
+		width: 80%;
+		height: 60px;
+		margin: 5px;
+		font-size: 30px;
+	}
+	#search button{
+		height: 72px;
+		width: 72px;
+		margin: 5px;
+		border: 3px solid #5ec031;
+	}
+	#search{
+		order: 2;
+		width: 39%;
+		margin-left: unset;
+		margin-right: 10px;
+	}
+	header{
+		height: 150px;
+	}
+	#hamburger{
+		order:3;
+		display: block !important;
+	}
+}
+
+
+@media only screen and (max-width: 1260px){
+	nav{
 		margin: 0 auto;
 		order:3;
 	}
 	#logo{
-		/*margin-right: 100%*/
 	}
 	#search{
 		order:2;
 	}
 }
+
 
 .nav--link{
 	padding: 0.7em;
@@ -171,8 +213,27 @@ nav{
 }
 
 #hamburger{
+	display: none;
 	overflow: hidden;
-    margin-top: 30px;
+	margin-top: 35px;
+	height: 72px;
+}
+
+#hamburger #toggle{
+
+	border: 3px solid #5ec031;
+	padding: 13px 0;
+	cursor: pointer;
+	outline: none;
+	/*height: 50px;*/
+	width: 66px;
+}
+
+#hamburger #toggle div{
+	width: 40%;
+	height: 4px;
+	background-color: #0000007a;
+	margin: 7px auto;
 }
 
 .hamburger_down{
@@ -182,14 +243,14 @@ nav{
 
 .hamburger_up{
 	height: 45px;
-    background: transparent;
+	width: 72px;
+	background: transparent;
 }
 
 #hamburger li {
     display: list-item;
     list-style: none;
-    margin-top: 6px;
-
+    margin-bottom: 6px;
 }
 
 #hamburger a {

@@ -29,9 +29,13 @@
 	<button onclick="search()"></button>
 </div>
 
-<div id="hamburger" class="hamburger_up" style="display: none;">	
-	<ul style="padding: 0">
-		<li><a class="nav--link" onclick="toggle_ham()">MENU</a></li>
+<div id="hamburger" class="hamburger_up" style="">	
+	<ul style="padding: 0;margin-top: 0">
+		<li><div id="toggle" onclick="toggle_ham()">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div></li>
 		<li><a href="index.html" class="nav--link" id="">HOME</a></li>
 		<li><a href="index.html#news" class="nav--link">NEWS</a></li>
 		<li><a href="index.html#gallery" class="nav--link">GALLERY</a></li>
