@@ -144,36 +144,42 @@ nav{
 		/* width:50%; */
 	}
 	#logo h1{
-		font-size: 47px;
+		font-size: 70px;
 	}
 	#logo h3{
-		font-size: 24px;
+		font-size: 35px;
 	}
 	#search input{
-		width: 80%;
+		/*width: 0;*/
 		height: 60px;
-		margin: 5px;
+		margin: 0px;
+		padding: 0;
+		border:0;
 		font-size: 30px;
 	}
 	#search button{
-		height: 72px;
-		width: 72px;
+		height: 82px;
+		width: 82px;
 		margin: 5px;
 		border: 3px solid #5ec031;
 	}
 	#search{
-		order: 2;
-		width: 39%;
-		margin-left: unset;
+		order: 3;
+		width: fit-content;
+		/*margin-left: unset;*/
 		margin-right: 10px;
 	}
 	header{
-		height: 150px;
+		/*height: 200px;*/
 	}
 	#hamburger{
-		order:3;
+		order:2;
+		margin-left: auto;
 		display: block !important;
+		margin-right: 10px;
 	}
+
+
 }
 
 
@@ -185,7 +191,7 @@ nav{
 	#logo{
 	}
 	#search{
-		order:2;
+		order:3;
 	}
 }
 
@@ -211,7 +217,7 @@ nav{
 	display: none;
 	overflow: hidden;
 	margin-top: 35px;
-	height: 72px;
+	height: 82px;
 }
 
 #hamburger #toggle{
@@ -228,7 +234,7 @@ nav{
 	width: 40%;
 	height: 4px;
 	background-color: #0000007a;
-	margin: 7px auto;
+	margin: 9px auto;
 }
 
 .hamburger_down{
