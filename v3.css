@@ -150,7 +150,7 @@ nav{
 		font-size: 35px;
 	}
 	#search input{
-		/*width: 0;*/
+		width: 0;
 		height: 60px;
 		margin: 0px;
 		padding: 0;
@@ -158,8 +158,8 @@ nav{
 		font-size: 30px;
 	}
 	#search button{
-		height: 82px;
-		width: 82px;
+		height: 100px;
+		width: 100px;
 		margin: 5px;
 		border: 3px solid #5ec031;
 	}
@@ -217,7 +217,8 @@ nav{
 	display: none;
 	overflow: hidden;
 	margin-top: 35px;
-	height: 82px;
+	height: 100px;
+	width: 100px
 }
 
 #hamburger #toggle{
@@ -226,8 +227,8 @@ nav{
 	padding: 13px 0;
 	cursor: pointer;
 	outline: none;
-	/*height: 50px;*/
-	width: 66px;
+	height: 68px;
+	width: 94px;
 }
 
 #hamburger #toggle div{
