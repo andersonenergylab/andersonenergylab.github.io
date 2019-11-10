@@ -3,15 +3,17 @@
 
 <head>
 
-	
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
 
 	<script type="text/javascript" src="scripts/fuse.min.js"></script>
 	<script type="text/javascript" src="scripts/search.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 </head>
 
@@ -27,7 +29,7 @@
 	</script>
 	<title>Anderson Lab</title>
 	<header>
-		
+
 	</header>
 
 	<main style="background-image: url(images/cover8.jpg);">
@@ -48,7 +50,8 @@
 					The Anderson Lab investigates operational methods for more effective integration and use of
 					renewable energy technologies.
 					Our approach is interdisciplinary, combining engineering, economics and mathematics to better
-					understand the interactive forces of systems and markets.<!--  <a href="">Read more</a> -->
+					understand the interactive forces of systems and markets.
+					<!--  <a href="">Read more</a> -->
 				</p>
 			</div>
 
@@ -75,10 +78,10 @@
 			<div class="content">
 				<script>
 					fetch("news.json")
-					.then((response) => response.text())
-		    		.then((json) => {
-		       			display_news(JSON.parse(json), document.querySelector("#news .content"))
-		    		})
+						.then((response) => response.text())
+						.then((json) => {
+							display_news(JSON.parse(json), document.querySelector("#news .content"))
+						})
 				</script>
 
 			</div>
