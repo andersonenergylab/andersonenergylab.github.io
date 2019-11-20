@@ -19,13 +19,15 @@
 
 <div id="search">
 	<input type="text" id="search_box" placeholder="Search Anderson Lab">
-	<button onclick="search();show_search_input()" class="header_button"></button>
+	<button id="search_button" onclick="search();show_search_input()" class="header_button"></button>
 </div>
+
+
 
 <button id="hamburger" class="hamburger_up header_button" style="" onclick="toggle_ham()">
 </button>
 
-<nav class="mobile" style="height:0px">
+<nav class="mobile" style="height:0px;overflow: hidden;">
 	<a href="index.html" id="">HOME</a>
 	<a href="index.html#news">NEWS</a>
 	<a href="index.html#gallery">GALLERY</a>

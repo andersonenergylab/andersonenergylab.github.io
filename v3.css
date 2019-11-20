@@ -54,7 +54,7 @@ header a{
 
 #logo{
 	padding-left: 0.5em;
-	padding: 1em;
+	/* padding: 1em; */
 	width: fit-content;
 	min-width: 350px;
 	cursor: pointer;
@@ -76,11 +76,7 @@ header a{
 }
 
 #search{
-	/* float: right; */
-	/* width: 100%; */
-	/* position: absolute; */
-	right: 0;
-	/* top: -50px; */
+
 	margin-right: 20px;
 	margin-top: 30px;
 	margin-left: auto;
@@ -88,7 +84,7 @@ header a{
 	order:3;
 }
 
-#search input{
+#search_box{
 	height: 30px;
 	width: 250px;
 	padding: 5px 10px;
@@ -100,7 +96,7 @@ header a{
 	outline: none;
 }
 
-#search button{
+#search_button{
 	background-image: url('images/search.png');
 	height: 43px;
 	width: 40px;
@@ -170,7 +166,7 @@ nav{
 #hamburger{
 	display: none;
 	overflow: hidden;
-	margin-top: 35px;
+	/* margin-top: 35px; */
 	height: 72px;
 }
 
