@@ -70,9 +70,20 @@ function sort_people(p1, p2) {
 }
 
 function toggle_ham() {
-	console.log(2)
-	let ham = document.querySelector("#hamburger")
-	if (ham.getAttribute("class") == "hamburger_up") ham.setAttribute("class", "hamburger_down")
-	else ham.setAttribute("class", "hamburger_up")
+	let nav = document.querySelector("nav.mobile")
 
-}		
+	console.log(nav.style.height)
+
+	if (nav.style.height == "0px") nav.style.height = "unset";
+	else nav.style.height = "0px"
+
+}	
+
+function show_search_input(){
+	let input = document.querySelector("#search_box")
+
+	if (input.offSetParent == null){
+		input.style.display = "initial"
+		document.querySelector("#logo").style.display = "none"
+	}
+}

@@ -14,18 +14,20 @@
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+
 
 </head>
 
 <body
 	onload="setup('main');load_json('news.json', function(list){/*display_news(list, document.querySelector('#news .content'))*/}); load_json('gallery.json', gallery_load)">
 	<script type="text/javascript">
-		document.body.style.display = "none"
+		document.body.style.visibility = "hidden"
 		let css = document.createElement('link')
 		css.rel = 'stylesheet'
 		css.href = 'v3.css?nocache=' + (new Date).getTime()
 		document.head.appendChild(css)
-		css.onload = () => document.body.style.display = "initial"
+		css.onload = () => document.body.style.visibility = ""
 	</script>
 	<title>Anderson Lab</title>
 	<header>
