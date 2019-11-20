@@ -648,7 +648,7 @@ a{
 		background-size: 30% !important;
 	}
 
-	main{
-		/* font-size: 30px; */
+	main, body{
+		min-width:unset;
 	}
 }
