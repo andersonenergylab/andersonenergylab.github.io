@@ -27,6 +27,10 @@
 		css.rel = 'stylesheet'
 		css.href = 'v3.css?nocache=' + (new Date).getTime()
 		document.head.appendChild(css)
+		css = document.createElement('link')
+		css.rel = 'stylesheet'
+		css.href = 'mobile.css?nocache=' + (new Date).getTime()
+		document.head.appendChild(css)
 		css.onload = () => document.body.style.visibility = ""
 	</script>
 	<title>Anderson Lab</title>
