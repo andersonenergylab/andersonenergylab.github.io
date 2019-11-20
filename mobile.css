@@ -22,13 +22,17 @@
 
 	nav.mobile{
 		width: 100vw;
-		/* position: absolute; */
-		/* left: 0; */
-		/* top: 200px; */
 		background: white;
 		margin: 0;
-		height: 0;
 		overflow: hidden;
+		order: 100;
+		display: initial;
+		transition: 0.5s;
+		height: 220px;
+	}
+
+	nav.mobile.hidden{
+		height:0;
 	}
 
 	nav.mobile a{
@@ -36,7 +40,13 @@
 		font-size: 1.3em;
 		font-weight: bold;
 		width: 100%;
-		margin: 1px;
+		padding: 10px;
+		border-bottom: 1px solid #bdbdbd;
+	}
+
+	nav.mobile a:last-of-type{
+		border-bottom: 0;
+		padding-bottom: 0;
 	}
 	
 	#logo{
@@ -76,6 +86,7 @@
 		min-height: unset;
 		padding: 20px;
 		background-color: white;
+		border-bottom: 1px solid #bdbdbd;
 	}
 	#hamburger{
 		order:3;
@@ -86,5 +97,24 @@
 
 	main, body, #logo{
 		min-width:unset;
+		font-family: Helvetica , sans-serif;
+		color: #373a3c;
+	}
+
+	h1{
+		font-size: 1.5em !important;
+		font-weight: 900;
+	}
+
+	main section:first-of-type{
+		background: #f3f3f5 !important;
+	}
+	main section:first-of-type *{
+		color: #373a3c !important;
+	}
+
+	#about p{
+		font-weight: normal;
+		text-align:center
 	}
 }

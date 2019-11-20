@@ -69,20 +69,15 @@ function sort_people(p1, p2) {
 		return rank(p1) - rank(p2);
 }
 
-function toggle_ham() {
+function toggle_menu() {
 	let nav = document.querySelector("nav.mobile")
-
-	console.log(nav.style.height)
-
-	if (nav.style.height == "0px") nav.style.height = "unset";
-	else nav.style.height = "0px"
-
+	nav.classList.toggle("hidden")
 }	
 
 function show_search_input(){
 	let input = document.querySelector("#search_box")
 
-	if (input.offSetParent == null){
+	if (input.offsetParent === null){
 		input.style.display = "initial"
 		document.querySelector("#logo").style.display = "none"
 	}
