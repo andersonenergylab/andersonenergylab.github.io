@@ -117,4 +117,26 @@
 		font-weight: normal;
 		text-align:center
 	}
+
+	.only_visible_mobile{
+		display: initial !important;
+	}
+
+	.windmills{
+		display: flex !important;
+		margin: 50px auto;
+		align-items: baseline;
+		justify-content: center;
+	}
+
+	.windmills img{
+		width: auto !important;
+		height: 40px !important;
+	}
+
+	.windmills img:nth-child(2){
+		width: auto !important;
+		height: 70px !important;
+		margin: 0 -20px;
+	}
 }

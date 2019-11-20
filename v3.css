@@ -547,4 +547,7 @@ a{
 	margin: 1em 6em;
 }
 
+.only_visible_mobile{
+	display: none;
+}
 
