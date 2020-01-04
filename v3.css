@@ -350,7 +350,7 @@ nav.mobile{
 }
 
 #gallery_current{
-	width: fit-content;
+	width: min-content;
 	display: flex;
 	margin: auto;
 	margin-top: 5px;

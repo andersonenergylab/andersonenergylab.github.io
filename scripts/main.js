@@ -1,5 +1,7 @@
 function json_to_tsv(json, fields){
-	tsv = "";
+	let tsv = "";
+	let arr = JSON.parse(json);
+	let fields = Object.keys(arr[0]);
 	JSON.parse(json).forEach(function (e){
 		fields.forEach(function (f){
 			tsv += e[f] += "	";
@@ -36,7 +38,7 @@ function setup(page="") {
 		document.body.style.background = "white"
 	}
 
-	fetch("header.html")
+	fetch("header.html?nocache=" + (new Date).getTime())
 	.then((response) => response.text())
 	.then((html) => {
 			document.querySelector("header").innerHTML = html;
