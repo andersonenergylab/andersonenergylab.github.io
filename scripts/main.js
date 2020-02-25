@@ -1,14 +1,7 @@
 function json_to_tsv(json, fields){
-	let tsv = "";
 	let arr = JSON.parse(json);
-	let fields = Object.keys(arr[0]);
-	JSON.parse(json).forEach(function (e){
-		fields.forEach(function (f){
-			tsv += e[f] += "	";
-			
-		});
-		tsv += "\n";
-	});
+	//let fields = Object.keys(arr[0]);
+	let tsv = [fields.join("\t")].concat(arr.map(o => fields.map(f=>o[f]).join("\t"))).join("\n")
 	return tsv;
 }
 
