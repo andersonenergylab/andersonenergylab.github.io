@@ -1,4 +1,11 @@
 [
+	{"title":"Demand response for reducing coincident peak loads in data centers",
+	"authors":["Maciej Lukawski", "Jefferson W Tester", "Michal C Moore", "Pawel Krol", "C Lindsay Anderson"],
+	"date":"2019",
+	"publisher":"Proceedings of the 52nd Hawaii International Conference on System Sciences",
+	"link":"https://doi.org/10.24251/HICSS.2019.413",
+	"keywords":[]},
+	
 	{"authors":["Amandeep Gupta",
     "Lindsay Anderson"],
     "title":"Statistical Bus Ranking for Flexible Robust Unit Commitment",
