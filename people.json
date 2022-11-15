@@ -15,6 +15,6 @@
 {"name":"Laura Tupper", "title":"PhD", "current":false, "position":"PhD Student", "field":"", "bio":""},
 {"name":"José Carrillo", "title":"BS", "current":false, "position":"PhD Student", "field":"Electrical Engineering", "bio":""},
 {"name":"Lingfeng Cheng", "title":"BS", "current":false, "position":"PhD Student", "field":"Chemical and Biomolecular Engineering", "bio":""},
-{"name":"Luckny Zéphyr", "title":"PhD", "current":false, "position":"PhD Student", "field":"", "bio":""}
+{"name":"Luckny Zéphyr", "title":"PhD", "current":false, "position":"PhD Student", "field":"", "bio":""},
 {"name":"Gerald", "title":"MS", "current":true, "position":"PhD Student", "field":"", "bio":""}
 ]
