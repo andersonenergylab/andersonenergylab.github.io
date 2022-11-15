@@ -91,7 +91,7 @@
 				bio.setAttribute("class", "alumni");
 				let img = document.createElement("div");
 					img.setAttribute("class", "headshot");
-					img.style.backgroundImage = "url(images/people/"+p.name.replace(/ /g, "")+".jpg)"
+					img.style.backgroundImage = "url(images/people/"+p.name.replace(/ |\(|\)/g, "")+".jpg)"
 				let name = document.createElement("h3");
 					name.innerText = p.name + ", " + p.title;
 				
