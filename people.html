@@ -71,7 +71,9 @@
 				let img = document.createElement("div");
 					img.setAttribute("class", "headshot");
 					img.style.backgroundImage = "url(images/people/"+p.name.replace(/ |\(|\)/g, "")+".jpg)"
-				let name = document.createElement("h3");
+				let name = document.createElement("a");
+					name.href = p.link;
+					name.target = "_blank";
 					name.innerText = p.name + ", " + p.title;
 				let position = document.createElement("h4");
 					position.innerHTML = p.position;
