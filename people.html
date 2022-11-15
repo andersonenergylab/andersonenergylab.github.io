@@ -95,6 +95,7 @@
 					img.setAttribute("class", "headshot");
 					img.style.backgroundImage = "url(images/people/"+p.name.replace(/ |\(|\)/g, "")+".jpg)"
 				let name = document.createElement("a");
+				name.setAttribute("class", "alumni");
 					name.href = p.link;
 					name.target = "_blank";
 					name.innerText = p.name + ", " + p.title;
